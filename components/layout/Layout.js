@@ -4,22 +4,25 @@ import { Global, css } from "@emotion/react";
 import styled from "@emotion/styled";
 import Header from "./Header";
 import Banner from "./Banner";
+import NavMenu from "./NavMenu";
 
 const DivContainer = styled.div`
   width: 100%;
+  max-height: 100vh;
 `
 
 const Main = styled.main`
   width: 100%;
+  height: calc(100vh - 300px);
   padding: 2%;
   overflow-x: auto;
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 5px;
     height: 5px;
   }
   ::-webkit-scrollbar-thumb {
-    background: var(--red);
-    border-radius: 4px;
+    background: var(--purple1);
+    border-radius: 5px;
   }
   ::-webkit-scrollbar-thumb:active {
     background-color: var(--purple2);
@@ -109,6 +112,7 @@ const Layout = (props) => {
         <Header />
         <Banner />
         <Main>{props.children}</Main>
+        <NavMenu />
       </DivContainer>
     </Fragment>
   );

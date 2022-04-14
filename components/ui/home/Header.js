@@ -4,13 +4,17 @@ export const HeaderNav = styled.header`
   width: 100%;
   height: 60px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 0 5%;
   align-items: center;
   background: linear-gradient(0deg, var(--purple2) 0%, var(--purple1) 100%);
   box-shadow: 0 5px 10px rgba(70,19,25, 0.6);
   padding: 0 3%;
   box-sizing: border-box;
   color: var(--purple3);
+  &>img{
+    filter: invert(0.7);
+  }
 `;
 
 export const HeaderBox = styled.div`
@@ -38,5 +42,9 @@ export const HeaderNavBottom = styled.div`
 export const BoxBanner = styled.div`
   width: 100%;
   height: 80px;
-  background: var(--purple3)
+  &>img{
+    max-width: 100%;
+    min-width: 100%;
+    height: 80px;
+  }
 `;

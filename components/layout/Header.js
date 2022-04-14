@@ -5,7 +5,10 @@ import Link from 'next/link';
 const Header = () => {
   return (
     <>
-      <HeaderNav />
+      <HeaderNav>
+        <img src="/menu.png" />
+        <img src="/usuario.png" />
+      </HeaderNav>
       <HeaderBox>
         <HeaderNavBottom />
         <Link href="/"><h2>CLANDESTINO</h2></Link>

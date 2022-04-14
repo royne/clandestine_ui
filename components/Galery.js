@@ -8,6 +8,16 @@ const Galery = () => {
       <Card image={"escort2.jpg"} />
       <Card image={"escort3.jpg"} />
       <Card image={"escort4.jpg"}/>
+      <Card image={"escort1.jpg"}/>
+      <Card image={"escort2.jpg"} />
+      <Card image={"escort3.jpg"} />
+      <Card image={"escort4.jpg"}/>
+      <Card image={"escort1.jpg"}/>
+      <Card image={"escort2.jpg"} />
+      <Card image={"escort3.jpg"} />
+      <Card image={"escort4.jpg"}/>
+      <Card image={"escort1.jpg"}/>
+      <Card image={"escort2.jpg"} />
     </ContainerGalery>
   )
 }

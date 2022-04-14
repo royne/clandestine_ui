@@ -2,7 +2,10 @@ import { BoxBanner } from "../ui/home/Header";
 
 const Banner = () => {
   return (
-    <BoxBanner/>
+    <BoxBanner>
+      <img src="/banner1.png" />
+    </BoxBanner>
+
   );
 }
 
