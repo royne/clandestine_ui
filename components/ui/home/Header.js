@@ -34,3 +34,9 @@ export const HeaderNavBottom = styled.div`
   display: flex;
   background: linear-gradient(0deg, var(--purple1) 0%, var(--purple2) 100%);
 `;
+
+export const BoxBanner = styled.div`
+  width: 100%;
+  height: 80px;
+  background: var(--purple3)
+`;

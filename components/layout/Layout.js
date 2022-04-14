@@ -3,6 +3,7 @@ import Head from "next/head";
 import { Global, css } from "@emotion/react";
 import styled from "@emotion/styled";
 import Header from "./Header";
+import Banner from "./Banner";
 
 const DivContainer = styled.div`
   width: 100%;
@@ -10,7 +11,7 @@ const DivContainer = styled.div`
 
 const Main = styled.main`
   width: 100%;
-  padding-bottom: 0;
+  padding: 2%;
   overflow-x: auto;
   ::-webkit-scrollbar {
     width: 8px;
@@ -106,6 +107,7 @@ const Layout = (props) => {
       </Head>
       <DivContainer>
         <Header />
+        <Banner />
         <Main>{props.children}</Main>
       </DivContainer>
     </Fragment>
