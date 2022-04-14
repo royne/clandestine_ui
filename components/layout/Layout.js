@@ -37,7 +37,7 @@ const Main = styled.main`
     background: var(--purple2);
   }
   @media (min-width: 576px) {
-    padding: 0 10%;
+    padding: 3% 10%;
   }
 `;
 
