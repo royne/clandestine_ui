@@ -1,8 +1,9 @@
+import Layout from '../components/layout/Layout'
 
 export default function Home() {
   return (
-    <div>
+    <Layout>
       <hi>El proyecto</hi>
-    </div>
+    </Layout>
   )
 }
