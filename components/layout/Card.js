@@ -1,7 +1,7 @@
 import React from 'react'
 import { BoxCard, BoxImg, BoxInfo } from '../ui/home/Card'
 
-const Card = ({image}) => {
+const Card = ({ image }) => {
   return (
     <BoxCard>
       <BoxImg>
