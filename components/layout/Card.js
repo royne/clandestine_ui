@@ -1,5 +1,5 @@
 import React from 'react'
-import { BoxCard, BoxImg, BoxInfo } from '../ui/home/Card'
+import { BoxCard, BoxImg, BoxInfo, ImgType } from '../ui/home/Card'
 
 const Card = ({ image }) => {
   return (
@@ -10,11 +10,11 @@ const Card = ({ image }) => {
       <BoxInfo>
         <div className='info'>
           <span>Linda</span>
-          <span>* 4.5</span>
         </div>
         <div className='info detail_info'>
           <span>25 años - Chapinero</span>  
         </div>
+        <ImgType src={`/icons/premium.svg`} />
       </BoxInfo >
     </BoxCard>
   )

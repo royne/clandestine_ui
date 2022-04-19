@@ -21,6 +21,7 @@ export const BoxImg = styled.div`
 `
 
 export const BoxInfo = styled.div`
+  position: relative;
   width: 100%;
   height: 60px;
   background-color: var(--purple1);
@@ -36,4 +37,12 @@ export const BoxInfo = styled.div`
   .detail_info{
     font-size: 13px;
   }
+`
+export const ImgType = styled.img`
+  max-width: 50px;
+  max-height: 50px;
+  position: absolute;
+  bottom: 50%;
+  right: 1.5%;
+  transform: translateY(50%);
 `

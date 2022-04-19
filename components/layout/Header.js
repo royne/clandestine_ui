@@ -13,7 +13,7 @@ const Header = () => {
   return (
     <>
       <HeaderNav>
-        <img src="/menu.png" />
+        <img src="/icons/menu.svg" />
         {user ? <img src="/usuario.png" /> : <span onClick={showModal}>Iniciar sesion</span>}
       </HeaderNav>
       <HeaderBox>

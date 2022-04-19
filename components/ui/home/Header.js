@@ -13,7 +13,7 @@ export const HeaderNav = styled.header`
   box-sizing: border-box;
   color: var(--purple3);
   &>img{
-    filter: invert(0.7);
+    width: 25px;
   }
 `;
 
