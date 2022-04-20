@@ -13,7 +13,8 @@ export const HeaderNav = styled.header`
   box-sizing: border-box;
   color: var(--purple3);
   &>img{
-    width: 25px;
+    width: 20px;
+    padding-top: 10px;
   }
 `;
 
@@ -29,6 +30,17 @@ export const HeaderBox = styled.div`
     left: 50%;
     transform: translateX(-50%) translateY(30%);
     color: var(--purple3);
+  }
+  .logo{
+    position: absolute;
+    top: 0;
+    right: 2%;
+    transform: translateY(-35%);
+    &>img{
+      max-width: 100%;
+      min-width: 100%;
+      height: 150px;
+    }
   }
 `;
 

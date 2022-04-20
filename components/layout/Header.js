@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import {useUser} from '../../context/userContext'
-import { HeaderNav, HeaderBox, HeaderNavBottom } from "../ui/home/Header";
+import { HeaderNav, HeaderBox, HeaderNavBottom, Logo } from "../ui/home/Header";
 import Link from 'next/link';
 import Login from '../auth/Login'
 
@@ -13,12 +13,13 @@ const Header = () => {
   return (
     <>
       <HeaderNav>
-        <img src="/icons/menu.svg" />
-        {user ? <img src="/usuario.png" /> : <span onClick={showModal}>Iniciar sesion</span>}
+        {user ? <img src="/usuario.png" style={{width:"30px"}}/> : <img src="/icons/menu.svg" onClick={showModal}/>}
       </HeaderNav>
       <HeaderBox>
         <HeaderNavBottom />
-        <Link href="/"><h2>CLANDESTINO</h2></Link>
+        <Link href={"/"} >
+          <a className="logo"><img src={"/logo.svg"} /></a>
+        </Link>
       </HeaderBox>
       <Login openModal={showLogin} hideModal={hideModal}/>
     </>

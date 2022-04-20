@@ -1,10 +1,19 @@
-import React from 'react'
+import { Container } from "../ui/escort_book/PhotosEdit"
+import Photo from "./Photo"
 
 const PhotosEdit = () => {
   return (
-    <div>
-      <h1>soy phots edit</h1>
-    </div>
+    <Container>
+      <Photo/>
+      <Photo/>
+      <Photo/>
+      <Photo/>
+      <Photo/>
+      <Photo/>
+      <Photo/>
+      <Photo/>
+      <Photo/>
+    </Container>
   )
 }
 
