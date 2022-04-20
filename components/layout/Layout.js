@@ -13,7 +13,7 @@ const DivContainer = styled.div`
 
 const Main = styled.main`
   width: 100%;
-  height: calc(100vh - 300px);
+  height: ${(props) => props.calHeigth ? "calc(100vh - 300px)" : "calc(100vh - 220px)"};
   padding: 2%;
   overflow-x: auto;
   ::-webkit-scrollbar {
@@ -110,8 +110,8 @@ const Layout = (props) => {
       </Head>
       <DivContainer>
         <Header />
-        <Banner />
-        <Main>{props.children}</Main>
+        {props.showBanner && <Banner />}
+        <Main calHeigth={props.showBanner}>{props.children}</Main>
         <NavMenu />
       </DivContainer>
     </Fragment>
