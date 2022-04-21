@@ -69,7 +69,6 @@ const Layout = (props) => {
             font-size: 1.6rem;
             line-height: 1.5;
             background-color: var(--black);
-            color: var(--white);
             margin: 0;
           }
           h1,
@@ -77,6 +76,7 @@ const Layout = (props) => {
           h3 {
             margin: 0 0 2rem 0;
             line-height: 1.5;
+            color: var(--purple3);
           }
           h1,
           h2 {
@@ -88,6 +88,13 @@ const Layout = (props) => {
           }
           p {
             font-family: "helvetica", sans-serif;
+            color: var(--purple3);
+          }
+          span{
+            color: var(--purple3);
+          }
+          label{
+            color: var(--white);
           }
           ul {
             list-style: none;

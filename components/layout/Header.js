@@ -18,7 +18,7 @@ const Header = () => {
       <HeaderBox>
         <HeaderNavBottom />
         <Link href={"/"} >
-          <a className="logo"><img src={"/logo.svg"} /></a>
+          <a className="logo"><img src={"/logo.png"} /></a>
         </Link>
       </HeaderBox>
       <Login openModal={showLogin} hideModal={hideModal}/>
