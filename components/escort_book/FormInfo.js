@@ -86,7 +86,7 @@ const FormInfo = ({user}) => {
           </div>
           <div>
             <label>Descripcion</label>
-            <textarea name="description" onChange={handleChange} />
+            <textarea name="description" onChange={handleChange} value={data.description}/>
           </div>
           
           <div>

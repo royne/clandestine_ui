@@ -13,7 +13,7 @@ const EscortBook = () => {
     <Layout>
       <Nav setTab={setTab} tab={tab}/>
       {tab == 0 && <p>soy perfil</p>}
-      {tab == 1 && <PhotosEdit />}
+      {tab == 1 && <PhotosEdit user={user}/>}
       {tab == 2 && <FormInfo user={user}/>}
     </Layout>
   )

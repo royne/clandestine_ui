@@ -1,9 +1,9 @@
 
-const Photo = () => {
+const Photo = ({image}) => {
   return (
     <div className="box_photo">
       <div className="box_photo_content">
-        <img src="/escort1.jpg"/>
+        <img src={image}/>
       </div>
     </div>
   );
