@@ -1,6 +1,9 @@
 import React, {useState} from 'react'
 import {BASE_URL} from '../settings/base'
 import Layout from '../components/layout/Layout'
+import Router, { useRouter } from 'next/router'
+import {login} from '../settings/auth'
+import {useUser} from '../context/userContext'
 
 const singUpEscort = () => {
   const [data, setData] = useState({
@@ -8,6 +11,8 @@ const singUpEscort = () => {
     phone: "",
     password: ""
   });
+  const { setChargeUser, setUser } = useUser();
+  const router = useRouter();
 
   const handleChange = e => {
     setData({
@@ -24,14 +29,24 @@ const singUpEscort = () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ user: data })
     })
-    const response = await request.json()
-    console.log(data)
-    setData({
-      username: "",
-      email: "",
-      password: ""
-
-    });
+    if (request.ok) {
+      const dataLogin = await login({
+        email: data.email,
+        password: data.password,
+      });
+      if (dataLogin) {
+        setUser(dataLogin);
+        setChargeUser(false);
+      }
+      return router.push("/escort_book")
+    }else{
+      alert("error inesperado")
+      setData({
+        username: "",
+        email: "",
+        password: ""
+      });
+    }
   }
   return (
     <Layout>

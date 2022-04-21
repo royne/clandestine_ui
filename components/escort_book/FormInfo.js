@@ -10,7 +10,6 @@ const FormInfo = ({user}) => {
     activities: [],
     locations: [],
   })
-
   useEffect(() =>{
     if (escort) {
       setData({
