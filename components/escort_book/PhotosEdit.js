@@ -3,11 +3,11 @@ import { BASE_URL } from '../../settings/base'
 import { Container } from "../ui/escort_book/PhotosEdit"
 import Photo from "./Photo"
 import BtnGridPhotos from './BtnGridPhotos'
+import ProfilePhoto from "./ProfilePhoto"
 
 const PhotosEdit = ({user}) => {
   const [getPhotos, setGetPhotos] = useState(null)
   const photos = user.photos
-  console.log(user);
 
   useEffect(() => {
     const sendPhotos = async () => {
@@ -28,6 +28,7 @@ const PhotosEdit = ({user}) => {
 
   return (
     <div>
+      <ProfilePhoto user={user} />
       <Container>
         {photos && photos.map(elm => <Photo key={elm.id} image={elm.url}/>)}
       </Container>

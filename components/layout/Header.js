@@ -13,7 +13,7 @@ const Header = () => {
   return (
     <>
       <HeaderNav>
-        {user ? <img src="/usuario.png" style={{width:"30px"}}/> : <img src="/icons/menu.svg" onClick={showModal}/>}
+        {(user && user.avatar) ? <img src={user.avatar} style={{width:"30px",height:"30px",borderRadius:"50%",padding:0}}/> : <img src="/icons/menu.svg" onClick={showModal}/>}
       </HeaderNav>
       <HeaderBox>
         <HeaderNavBottom />
