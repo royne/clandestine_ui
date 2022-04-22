@@ -12,6 +12,7 @@ export const BoxCard = styled.div`
 export const BoxImg = styled.div`
   width: 100%;
   height: 240px;
+  cursor: pointer;
   &>img{
     min-width: 100%;
     max-width: 100%;
