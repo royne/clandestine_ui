@@ -35,9 +35,8 @@ export const BtnGridPhoto = styled.form`
   width: 50px;
   height: 50px;
   position: absolute;
-  bottom: ${(props) => props.profile ? "0" : "70px"};
-  right: ${(props) => props.profile ? "0" : "2%"};
-  transform: ${(props) => props.profile ? "translateX(40%) translateY(-20%)" : "0"};
+  bottom: 70px;
+  right: 2%;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -51,8 +50,8 @@ export const BtnGridPhoto = styled.form`
     z-index: -1;
   }
   #photos_containt_profile + label {
-    width: ${(props) => props.profile ? "30px" : "50px"};
-    height: ${(props) => props.profile ? "30px" : "50px"};
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     background-color: var(--purple1);
     display: flex;
@@ -61,8 +60,8 @@ export const BtnGridPhoto = styled.form`
     line-height: 0;
   }
   label>.ico_photo{
-    width: ${(props) => props.profile ? "20px" : "30px"};
-    height: ${(props) => props.profile ? "20px" : "30px"};
+    width: 30px;
+    height: 30px;
     filter: invert(0.7);
   }
 `
@@ -111,4 +110,39 @@ export const BoxImgProfile = styled.div`
   height: 150px;
   position: relative;
 
+`
+export const BtnProfilePhoto = styled.form`
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translateX(40%) translateY(-20%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  #photos_containt_profile_btn{
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+  #photos_containt_profile_btn + label {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--purple1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 0;
+  }
+  label>.ico_photo{
+    width: 20px;
+    height: 20px;
+    filter: invert(0.7);
+  }
 `

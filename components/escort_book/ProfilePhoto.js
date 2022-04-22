@@ -1,18 +1,18 @@
 import {useState, useEffect} from 'react'
 import {BASE_URL} from '../../settings/base'
 import { ContainerPhotoProfile, ImgProfile, BoxInfo } from '../ui/escort_book/PhotosEdit'
-import BtnGridPhotos from './BtnGridPhotos'
+import BtnProfilePhotos from './BtnProfilePhotos'
 
 const ProfilePhoto = ({ user }) => {
-  const [getPhotos, setGetPhotos] = useState(null)
+  const [getDataPhotos, setGetDataPhotos] = useState(null)
   const escort = user.escort
 
   useEffect(() => {
-    const sendPhotos = async () => {
-      if (!getPhotos) return
+    const sendPhoto = async () => {
+      if (!getDataPhotos) return
       const url = `${BASE_URL}/escorts/${escort.id}`;
       const formData = new FormData();
-      formData.append(`escort[avatar]`, getPhotos[0]);
+      formData.append(`escort[avatar]`, getDataPhotos);
       const request = await fetch(url, {
         method: "PATCH",
         body: formData,
@@ -21,14 +21,14 @@ const ProfilePhoto = ({ user }) => {
         ? alert("Tus foto se subio con exito")
         : alert("Ocurrio algo inexperado");
     }
-    sendPhotos()
-  }, [getPhotos])
+    sendPhoto()
+  }, [getDataPhotos])
 
   return (
     <ContainerPhotoProfile>
       <div style={{position: "relative"}}>
         <ImgProfile src={`${user.avatar ? user.avatar : "/usuario.png"}`} />
-        <BtnGridPhotos setGetPhotos={setGetPhotos} profile={true}/>
+        <BtnProfilePhotos setGetDataPhotos={setGetDataPhotos} />
       </div>
       <BoxInfo>
         <h3>{escort.username}</h3>

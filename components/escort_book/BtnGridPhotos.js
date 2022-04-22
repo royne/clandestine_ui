@@ -1,7 +1,7 @@
 import React from 'react'
 import { BtnGridPhoto } from "../ui/escort_book/PhotosEdit"
 
-const BtnGridPhotos = ({setGetPhotos, profile=false}) => {
+const BtnGridPhotos = ({setGetPhotos}) => {
 
   const handlePhotos = async (e) => {
     const arrayPhotos = Array.from(e.target.files)
@@ -9,7 +9,7 @@ const BtnGridPhotos = ({setGetPhotos, profile=false}) => {
   }
 
   return (
-    <BtnGridPhoto encType="multipart/form-data" profile={profile}>
+    <BtnGridPhoto encType="multipart/form-data">
       <input
         type="file"
         accept="image/*"
