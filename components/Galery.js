@@ -1,23 +1,22 @@
+import {useEffect, useState} from 'react' 
+import {BASE_URL} from '../settings/base'
 import Card from './layout/Card'
 import {ContainerGalery} from './ui/home/Galery'
 
 const Galery = () => {
+  const [escorts, setScorts] = useState([])
+
+  useEffect(() => {
+    const getData = async () =>{
+      const response = await fetch(`${BASE_URL}/escorts`)
+      const data = await response.json()
+      setScorts(data)
+    }
+    getData()
+  }, [])
   return (
     <ContainerGalery>
-      <Card image={"escort1.jpg"}/>
-      <Card image={"escort2.jpg"} />
-      <Card image={"escort3.jpg"} />
-      <Card image={"escort4.jpg"}/>
-      <Card image={"escort1.jpg"}/>
-      <Card image={"escort2.jpg"} />
-      <Card image={"escort3.jpg"} />
-      <Card image={"escort4.jpg"}/>
-      <Card image={"escort1.jpg"}/>
-      <Card image={"escort2.jpg"} />
-      <Card image={"escort3.jpg"} />
-      <Card image={"escort4.jpg"}/>
-      <Card image={"escort1.jpg"}/>
-      <Card image={"escort2.jpg"} />
+      {escorts && escorts.map(elm => <Card element={elm} key={elm.id} />)}
     </ContainerGalery>
   )
 }

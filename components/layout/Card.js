@@ -1,18 +1,19 @@
 import React from 'react'
 import { BoxCard, BoxImg, BoxInfo, ImgType } from '../ui/home/Card'
 
-const Card = ({ image }) => {
+const Card = ({ element }) => {
+  console.log(element.avatar);
   return (
     <BoxCard>
       <BoxImg>
-        <img src={`/${image}`}/>
+        <img src={element.avatar}/>
       </BoxImg>
       <BoxInfo>
         <div className='info'>
-          <span>Linda</span>
+          <span>{element.username}</span>
         </div>
         <div className='info detail_info'>
-          <span>25 años - Chapinero</span>  
+          <span>{element.age} años</span>  
         </div>
         <ImgType src={`/icons/premium.svg`} />
       </BoxInfo >
