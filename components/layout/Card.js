@@ -1,12 +1,14 @@
+import Link from 'next/link';
 import React from 'react'
 import { BoxCard, BoxImg, BoxInfo, ImgType } from '../ui/home/Card'
 
 const Card = ({ element }) => {
-  console.log(element.avatar);
   return (
     <BoxCard>
       <BoxImg>
-        <img src={element.avatar}/>
+        <Link href={`/perfil/${element.id}`}>
+          <img src={element.avatar}/>
+        </Link>
       </BoxImg>
       <BoxInfo>
         <div className='info'>
