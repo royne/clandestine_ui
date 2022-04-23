@@ -1,7 +1,7 @@
 import {useRouter} from 'next/router'
 import Layout from '../../components/layout/Layout'
-import { BodyProfile } from '../../components/profile/BodyProfile'
-import HeaderProfile from '../../components/profile/HeaderProfile'
+import ProfileGridView from '../../components/profile/ProfileGridView'
+import ProfileScrollView from '../../components/profile/ProfileScrollView'
 import useGetEscort from '../../hooks/useGetEscort'
 
 const Profile = () => {
@@ -12,8 +12,8 @@ const Profile = () => {
   if (Object.keys(escort).length === 0) return null
   return (
     <Layout>
-      <HeaderProfile escort={escort}/>
-      <BodyProfile photos={escort.photos}/>
+      {/* <ProfileGridView escort={escort} /> */}
+      <ProfileScrollView escort={escort} />
     </Layout>
   )
 }
