@@ -18,11 +18,8 @@ const Header = () => {
             <img src={user.avatar} style={{width:"30px",height:"30px",borderRadius:"50%",padding:0}}/> 
           </Link>
         : 
-          <Link href={'/escort_book'} >
-            <img src="/icons/usuario.png" />
-          </Link>
+          < img src="/icons/menu.svg" onClick={showModal}/>
         }  
-        {!user && <img src="/icons/menu.svg" onClick={showModal}/>}
       </HeaderNav>
       <HeaderBox>
         <HeaderNavBottom />
