@@ -9,13 +9,22 @@ export const HeaderCard = styled.div`
   width: 100%;
   height: 40px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
-  &>img{
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    margin-right: 10px;
+  .img_profile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &>img{
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+  }
+  .img_grid{
+    height: 20px;
+    width: 20px;
   }
   text-transform: capitalize;
 `
