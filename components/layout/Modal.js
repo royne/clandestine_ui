@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import ReactDOM from "react-dom";
-import { StyledModalOverlay, StyledModal, StyledModalHeader, StyledModalBody } from '../ui/home/Modal'
+import { StyledModalOverlay, StyledModal, StyledModalHeader, StyledModalBody, StyledModalTitle } from '../ui/home/Modal'
 
 const Modal = ({ show, onClose, children, title }) => {
   const [isBrowser, setIsBrowser] = useState(false);
@@ -14,6 +14,7 @@ const Modal = ({ show, onClose, children, title }) => {
     onClose();
   };
 
+  
   const modalContent = show ? (
     <StyledModalOverlay>
       <StyledModal>

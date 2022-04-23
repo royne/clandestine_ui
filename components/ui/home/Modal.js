@@ -1,11 +1,14 @@
 import styled from '@emotion/styled'
 
 export const StyledModal = styled.div`
-  background: var(--black);
+  background: rgba(0,0,0,.9) url("/Fondo_Modal.jpg");
+  background-position: center;
+  background-blend-mode: darken;
   width: 90%;
   max-height: 600px;
   border-radius: 5px;
   padding: 15px;
+  border: 1px solid var(--white);
   @media (min-width: 576px) {
     width: 400px;
   }
@@ -34,3 +37,9 @@ export const StyledModalOverlay = styled.div`
   align-items: center;
   background-color: rgba(0, 0, 0, 0.5);
 `;
+
+export const StyledModalTitle = styled.div`
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+`
