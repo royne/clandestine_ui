@@ -1,5 +1,5 @@
 import React from 'react'
-import { ContainerPhotoProfile, ImgProfile, BoxInfo } from '../ui/escort_book/PhotosEdit'
+import { ContainerPhotoProfile, ImgProfile, BoxInfo } from '../../ui/escort_book/PhotosEdit'
 
 const HeaderProfile = ({ escort }) => {
 
