@@ -14,6 +14,7 @@ const Galery = () => {
     }
     getData()
   }, [])
+  // console.log(escorts[0].photos)
   return (
     <ContainerGalery>
       {escorts && escorts.map(elm => <Card element={elm} key={elm.id} />)}
