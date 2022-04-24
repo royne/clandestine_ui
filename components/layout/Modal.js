@@ -14,9 +14,14 @@ const Modal = ({ show, onClose, children, title }) => {
     onClose();
   };
 
+  const closeModal = (e) => {
+    if(e.target.classList.contains("modalTarget")){
+      onClose()
+    }
+  }
   
   const modalContent = show ? (
-    <StyledModalOverlay>
+    <StyledModalOverlay className="modalTarget" onClick={closeModal}>
       <StyledModal>
         <StyledModalHeader>
           <a href="#" onClick={handleCloseClick}>

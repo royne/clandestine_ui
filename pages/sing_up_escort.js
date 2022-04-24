@@ -4,6 +4,7 @@ import Layout from '../components/layout/Layout'
 import Router, { useRouter } from 'next/router'
 import {login} from '../settings/auth'
 import {useUser} from '../context/userContext'
+import {BoxForm, BoxIputs, FormInput} from '../components/ui/escort_book/FormEscort'
 
 const singUpEscort = () => {
   const [data, setData] = useState({
@@ -50,26 +51,32 @@ const singUpEscort = () => {
   }
   return (
     <Layout>
-      <h1 className='text-center'>soy el formulario</h1>
-      <div>
+      <h1 className='text-center' style={{textAlign: "center"}}>Soy el formulario</h1>
+      <BoxForm>
         <form onSubmit={submitForm}>
-          <div>
-            <label>Email</label>
-            <input type="mail" name="email" onChange={handleChange} />
-          </div>
-          <div>
-            <label>Telefono</label>
-            <input type="number" name="phone" onChange={handleChange} />
-          </div>
-          <div>
-            <label>Password</label>
-            <input type="password" name="password" onChange={handleChange} />
-          </div>
-          <div>
+          <BoxIputs>
+            <div>
+              <label>Email</label>
+            </div>
+            <FormInput type="mail" name="email" onChange={handleChange} />
+          </BoxIputs>
+          <BoxIputs>
+            <div>
+              <label>Telefono</label>
+            </div>
+            <FormInput type="number" name="phone" onChange={handleChange} />
+          </BoxIputs>
+          <BoxIputs>
+            <div>
+              <label>Password</label>
+            </div>
+            <FormInput type="password" name="password" onChange={handleChange} />
+          </BoxIputs>
+          <BoxIputs>
             <input type="submit" value="Crea Tu Perfil" />
-          </div>
+          </BoxIputs>
         </form>
-      </div>
+      </BoxForm>
     </Layout>
   )
 }
