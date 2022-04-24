@@ -1,6 +1,8 @@
 import {useState, useEffect} from 'react'
 import Select from 'react-select';
 import { getSelecteds, sendFormData } from '../../settings/escorts'
+import { BoxForm, BoxGroupInputs, BoxTextarea, BoxIputs, InpurButtom, BoxIn } from '../ui/escort_book/FormEscort'
+import { FormInput } from "../ui/home/FormModal"
 
 const FormInfo = ({user}) => {
   const [data, setData] = useState({})
@@ -59,37 +61,50 @@ const FormInfo = ({user}) => {
   }
 
   return (
-    <div>
-      <h1 className='text-center'>soy el formulario</h1>
+    <BoxForm>
+      <h1 className='text-center' style={{textAlign: "center"}}>Soy el formulario</h1>
       <div>
         <form onSubmit={submitForm}>
-          <div>
-            <label>Username</label>
-            <input type="text" name="username" value={data.username} onChange={handleChange} />
-          </div>
-          <div>
-            <label>Sexo</label>
-            <select name="sex" onChange={handleChange} value={data.sex}>
-              <option value="">Elige</option>
-              <option value="mujer">Mujer</option>
-              <option value="hombre">Hombre</option>
-              <option value="indefinido">Indefinido</option>
-            </select>
-          </div>
-          <div>
-            <label>Edad</label>
-            <input type="number" name="age" value={data.age} onChange={handleChange} />
-          </div>
-          <div>
-            <label>Precio</label>
-            <input type="number" name="price" value={data.price} onChange={handleChange} />
-          </div>
-          <div>
-            <label>Descripcion</label>
-            <textarea name="description" onChange={handleChange} value={data.description}/>
-          </div>
+          <BoxIputs>
+            <div>
+              <label>Username</label>
+            </div>
+            <FormInput type="text" name="username" value={data.username} onChange={handleChange} />
+          </BoxIputs>
+          <BoxGroupInputs>
+            <BoxIn>
+              <div>
+                <label>Sexo</label>
+              </div>
+              <select name="sex" onChange={handleChange} value={data.sex}>
+                <option value="">Elige</option>
+                <option value="mujer">Mujer</option>
+                <option value="hombre">Hombre</option>
+                <option value="indefinido">Indefinido</option>
+              </select>
+            </BoxIn>
+            <BoxIn>
+              <div>
+                <label>Edad</label>
+              </div>
+              <FormInput type="number" name="age" value={data.age} onChange={handleChange} />
+            </BoxIn>
+            <div>
+              <div>
+                <label>Precio</label>
+              </div> 
+              <FormInput type="number" name="price" value={data.price} onChange={handleChange} />
+            </div>
+          </BoxGroupInputs>
           
-          <div>
+          <BoxIputs>
+            <div>
+              <label>Descripcion</label>
+            </div>
+            <BoxTextarea name="description" onChange={handleChange} value={data.description}/>
+          </BoxIputs>
+          
+          <BoxIputs>
             <label>Categorias</label>
             <Select
               value={data.category_ids}
@@ -97,9 +112,9 @@ const FormInfo = ({user}) => {
               isMulti={true}
               options={options.categories}
             />
-          </div>
+          </BoxIputs>
 
-          <div>
+          <BoxIputs>
             <label>locaciones</label>
             <Select
               value={data.location_ids}
@@ -107,9 +122,9 @@ const FormInfo = ({user}) => {
               isMulti={true}
               options={options.locations}
             />
-          </div>
+          </BoxIputs>
 
-          <div>
+          <BoxIputs>
             <label>Servicios</label>
             <Select
               value={data.activity_ids}
@@ -117,14 +132,14 @@ const FormInfo = ({user}) => {
               isMulti={true}
               options={options.activities}
             />
-          </div>
+          </BoxIputs>
           
-          <div>
+          <InpurButtom>
             <input type="submit" value="Crea Tu Perfil" />
-          </div>
+          </InpurButtom>
         </form>
       </div>
-    </div>
+    </BoxForm>
   )
 }
 
