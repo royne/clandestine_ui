@@ -2,7 +2,8 @@ import Axios from "axios";
 import { getToken } from "./auth";
 
 
-export const BASE_URL = "http://localhost:4000/api/v1"
+// export const BASE_URL = "http://localhost:4000/api/v1"
+export const BASE_URL = "https://staging-clandestine-api.herokuapp.com/api/v1"
 
 export const axios = Axios.create({
   baseURL: BASE_URL,
