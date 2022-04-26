@@ -114,6 +114,8 @@ const Layout = (props) => {
         <meta httpEquiv="content-language" content="es"></meta>
         <title key="title">Clandestino</title>
         <meta name="theme-color" content="#461319" />
+        <link rel='manifest' href='/manifest.json' />
+        <meta name='viewport' content='minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover' />
       </Head>
       <DivContainer>
         <Header />
