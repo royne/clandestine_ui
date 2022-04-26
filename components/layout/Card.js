@@ -1,13 +1,14 @@
-import Link from 'next/link';
 import React from 'react'
-import { BoxCard, BoxImg, BoxInfo, ImgType } from '../ui/home/Card'
+import Link from 'next/link';
+import { BoxCard, BoxImg, BoxInfo, ImgType, ImgCard } from '../ui/home/Card'
+import Image from 'next/image';
 
 const Card = ({ element }) => {
   return (
     <BoxCard>
       <BoxImg>
         <Link href={`/perfil/${element.id}`}>
-          <img src={element.avatar}/>
+          <Image src={element.avatar} layout={"fill"}/>
         </Link>
       </BoxImg>
       <BoxInfo>

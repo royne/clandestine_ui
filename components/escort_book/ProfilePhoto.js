@@ -27,7 +27,7 @@ const ProfilePhoto = ({ user }) => {
   return (
     <ContainerPhotoProfile>
       <div style={{position: "relative"}}>
-        <ImgProfile src={`${user.avatar ? user.avatar : "/usuario.png"}`} />
+        <ImgProfile src={`${user.avatar ? user.avatar : "/usuario.png"}`} width={100} height={100} />
         <BtnProfilePhotos setGetDataPhotos={setGetDataPhotos} />
       </div>
       <BoxInfo>

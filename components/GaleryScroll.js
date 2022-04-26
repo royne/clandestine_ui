@@ -16,7 +16,7 @@ const GaleryScroll = () => {
   }, [])
   return (
     <>
-      {escorts && escorts.map(elm => <CardScroll escort={elm} photo={elm.photo} setChangeGrid={setChangeGrid} gridHome={true}/>)}
+      {escorts && escorts.map(elm => <CardScroll key={elm.photo} escort={elm} photo={elm.photo} setChangeGrid={setChangeGrid} gridHome={true}/>)}
     </>
   )
 }

@@ -12,6 +12,7 @@ export const HeaderCard = styled.div`
   justify-content: space-between;
   align-items: center;
   .img_profile{
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,6 +32,9 @@ export const HeaderCard = styled.div`
 export const BoxImageCard = styled.div`
   width: 100%;
   display: flex;
+  position: relative;
+  width: 100%;
+  min-height: 60vh;
   &>img{
     max-width: 100%;
     min-width: 100%;

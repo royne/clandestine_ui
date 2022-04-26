@@ -4,6 +4,7 @@ import { HeaderNav, HeaderBox, HeaderNavBottom, Logo } from "../ui/home/Header";
 import { MenuNav, MenuEmergent, MenuInput, MenuLi, MenuNew} from "../ui/home/Menu_emergent"
 import Link from 'next/link';
 import Login from '../auth/Login'
+import Image from 'next/image';
 
 const Header = () => {
   const [showLogin, setShowLogin] = useState(false)
@@ -31,7 +32,7 @@ const Header = () => {
       <HeaderNav>
         {user && user.avatar ? 
           <Link href={'/escort_book'}>
-            <img src={user.avatar} style={{width:"30px",height:"30px",borderRadius:"50%",padding:0}}/> 
+            <Image src={user.avatar} width={35} height={35} style={{borderRadius:"50%",padding:0}}/> 
           </Link>
         : 
           // <MenuNav>
