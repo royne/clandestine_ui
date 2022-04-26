@@ -13,7 +13,7 @@ const CardScroll = ({ escort, photo, setChangeGrid, gridHome=false}) => {
         <img src="/icons/grid.svg" className='img_grid' onClick={() => setChangeGrid(false)}/>
       </HeaderCard>
       <BoxImageCard>
-        {gridHome ? <Link href={`/perfil/${escort.id}`}><Image src={photo} layout={"fill"} /></Link> : <Image src={photo} layout={"fill"}/>}
+        {gridHome ? <Link href={`/perfil/${escort.id}`}><Image src={photo} layout={"fill"} objectFit={'cover'}/></Link> : <Image src={photo} layout={"fill"} objectFit={'cover'}/>}
       </BoxImageCard>
       <FooterCard>
         <span>Aca Va algo</span>

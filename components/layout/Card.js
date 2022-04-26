@@ -8,7 +8,7 @@ const Card = ({ element }) => {
     <BoxCard>
       <BoxImg>
         <Link href={`/perfil/${element.id}`}>
-          <Image src={element.avatar} layout={"fill"}/>
+          <Image src={element.avatar} layout={"fill"} objectFit={'cover'}/>
         </Link>
       </BoxImg>
       <BoxInfo>

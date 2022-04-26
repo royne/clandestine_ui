@@ -4,7 +4,7 @@ const Photo = ({image, setChangeGrid}) => {
   return (
     <div className="box_photo" onClick={() => setChangeGrid(true)}>
       <div className="box_photo_content">
-        <Image src={image} layout={"fill"}/>
+        <Image src={image} layout={"fill"} objectFit={'cover'}/>
       </div>
     </div>
   );
