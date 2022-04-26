@@ -13,8 +13,18 @@ const premium_slides = ({ escorts }) => {
 export default premium_slides
 
 export async function getStaticProps({ params }) {
+  const shuffle = (array) => {
+    let currentIndex = array.length, randomIndex
+    while (currentIndex != 0) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--
+      [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+    }
+    return array;
+  }
   const response = await fetch(`${BASE_URL}/escorts/randon_premium`)
-  const escorts = await response.json()
+  const data = await response.json()
+  const escorts = shuffle(data)
   return {
     props: {
       escorts
