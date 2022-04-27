@@ -58,15 +58,6 @@ const Login = ({ openModal, hideModal}) => {
         <form onSubmit={submitForm}>
           <div>
             <div>
-              <label>Soy</label>
-            </div>
-            <FormSelect name="selectUser">
-              <option value="cliente">Cliente</option>
-              <option value="escort">Escort</option>
-            </FormSelect>
-          </div>
-          <div>
-            <div>
               <label>Email</label>
             </div>
             <FormInput type="mail" name="email" onChange={handleChange}/>
