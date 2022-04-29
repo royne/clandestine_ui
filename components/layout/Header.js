@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {useUser} from '../../context/userContext'
 import { HeaderNav, HeaderBox, HeaderNavBottom, Logo } from "../ui/home/Header";
-import { MenuNav, MenuEmergent, MenuInput, MenuLi, MenuNew} from "../ui/home/Menu_emergent"
+import { MenuNav, MenuNew, MenuInBlack} from "../ui/home/Menu_emergent"
 import Link from 'next/link';
 import Login from '../auth/Login'
 import Image from 'next/image';
@@ -24,7 +24,12 @@ const Header = () => {
     }else{
       setShowMenu(true)
     }
-    
+  }
+
+  const closeMenu = (e) => {
+    if(e.target.classList.contains("menuBlack")){
+      setShowMenu(false)
+    }
   }
 
   return (
@@ -35,26 +40,23 @@ const Header = () => {
             <Image src={user.avatar} width={35} height={35} style={{borderRadius:"50%",padding:0}}/> 
           </Link>
         : 
-          // <MenuNav>
-          //   <MenuInput type="checkbox" id="menu"/>
-          //   <label htmlFor="menu"><img width="30" src="/icons/menu.svg" /></label>
-          //   <MenuEmergent>
-          //     <MenuLi onClick={showModal}>Iniciar Sesion</MenuLi>
-          //     <MenuLi onClick={showModal}>Registrarse</MenuLi>
-          //   </MenuEmergent>
-          // </MenuNav>
           <MenuNav>
             <div className="icono-menu" onClick={openMenu}>
               <img src="/icons/menu.svg" id="icono-menu" width="30"/>
             </div>
-            <MenuNew className="cont-menu active" id="menu" style={showMenu ? {transform: "translate(0px)"} : {transform: "translate(-110%)"}}>
+            <MenuNew className="cont-menu active" id="menu" style={showMenu ? {transform: "translate(0px)"} : {transform: "translate(-150%)"}} onClick={closeMenu}>  
+              <div>
                 <div className="icono-menu" onClick={openMenu} style={{marginTop: "7.5%", paddingLeft: "13px"}}>
                   <img src="/icons/menu.svg" id="icono-menu" width="30"/>
                 </div>
                 <ul>
                   <li onClick={showModal}> Iniciar Sesion </li>
                   <li onClick={showModal}> Registrate </li>
-                </ul>
+                </ul> 
+              </div>
+              <MenuInBlack className="menuBlack">
+
+              </MenuInBlack>
             </MenuNew>
           </MenuNav>
           

@@ -5,30 +5,6 @@ export const MenuNav = styled.nav`
   margin-top: 4%;
 `
 
-export const MenuEmergent = styled.ul`
-  display: none;
-`
-
-export const MenuInput = styled.input`
-  display: none;
-  &:checked ~ ul {
-    display: block;
-    position: absolute;
-    z-index: 10;
-  }
-`
-
- export const MenuLi = styled.li`
-  display: block;
-  width: 200px;
-  background: var(--purple1);
-  margin: 0;
-  padding: 10px;
-  list-style: none;
-  border-bottom: 1px solid grey;
- `
-
-
 //menu emergente
 export const MenuNew = styled.div`
   background-color: var(--black);
@@ -39,7 +15,6 @@ export const MenuNew = styled.div`
   top: 0;
   left: 0;
   z-index: 10;
-  
   transition: all .5s ease;
   & ul {
     padding: 100px 0px 20px 0px;
@@ -57,4 +32,14 @@ export const MenuNew = styled.div`
     background-color: rgb(228,228,228);
     color: rgb(42,42,42);
   }
+`
+
+export const MenuInBlack = styled.div`
+  position: absolute; 
+  background: var(--black);
+  opacity: .6;
+  top: 0; 
+  left: 100%;
+  height: 100vh; 
+  width: 43%
 `
