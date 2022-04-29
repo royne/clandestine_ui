@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { BASE_URL } from '../../settings/base'
+import { BASE_URL, axios } from '../../settings/base'
 import { Container } from "../ui/escort_book/PhotosEdit"
 import Photo from "./Photo"
 import BtnGridPhotos from './BtnGridPhotos'
@@ -7,7 +7,8 @@ import ProfilePhoto from "./ProfilePhoto"
 
 const PhotosEdit = ({user}) => {
   const [getPhotos, setGetPhotos] = useState(null)
-  const photos = user.photos
+  const escort = user
+  const [photos, setPhotos] = useState(escort.photos)
 
   useEffect(() => {
     const sendPhotos = async () => {
@@ -22,6 +23,8 @@ const PhotosEdit = ({user}) => {
       request.ok
         ? alert("Tus fotos se subieron con exito")
         : alert("Ocurrio algo inexperado");
+      const { data } = await axios.get("/users/current");
+      setPhotos(data.photos)
     }
     sendPhotos()
   }, [getPhotos])
