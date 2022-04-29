@@ -1,10 +1,11 @@
 import {useState, useEffect} from 'react'
-import {BASE_URL} from '../../settings/base'
+import {BASE_URL, axios} from '../../settings/base'
 import { ContainerPhotoProfile, ImgProfile, BoxInfo } from '../ui/escort_book/PhotosEdit'
 import BtnProfilePhotos from './BtnProfilePhotos'
 
 const ProfilePhoto = ({ user }) => {
   const [getDataPhotos, setGetDataPhotos] = useState(null)
+  const [userUpdate, setUserUpdate] = useState(null)
   const escort = user.escort
 
   useEffect(() => {
@@ -20,6 +21,8 @@ const ProfilePhoto = ({ user }) => {
       request.ok
         ? alert("Tus foto se subio con exito")
         : alert("Ocurrio algo inexperado");
+      const { data } = await axios.get("/users/current");
+      setUserUpdate(data)
     }
     sendPhoto()
   }, [getDataPhotos])
@@ -27,7 +30,11 @@ const ProfilePhoto = ({ user }) => {
   return (
     <ContainerPhotoProfile>
       <div style={{position: "relative"}}>
-        <ImgProfile src={`${user.avatar ? user.avatar : "/usuario.png"}`} width={100} height={100} />
+        {!userUpdate ? 
+          <ImgProfile src={`${user.avatar ? user.avatar : "/usuario.png"}`} width={100} height={100} />
+        :
+          <ImgProfile src={userUpdate.avatar} width={100} height={100} />
+        }
         <BtnProfilePhotos setGetDataPhotos={setGetDataPhotos} />
       </div>
       <BoxInfo>

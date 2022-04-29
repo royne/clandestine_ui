@@ -9,6 +9,7 @@ import NavMenu from "./NavMenu";
 const DivContainer = styled.div`
   width: 100%;
   max-height: 100vh;
+  overflow: hidden;
 `
 
 const Main = styled.main`
