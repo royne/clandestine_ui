@@ -9,7 +9,7 @@ const HeaderProfile = ({ escort }) => {
     <>
       <ContainerPhotoProfile>
         <div style={{ position: "relative" }}>
-          <ImgProfile src={`${escort.avatar ? escort.avatar : "/usuario.png"}`} />
+          <ImgProfile src={`${escort.avatar ? escort.avatar : "/usuario.png"}`} width={100} height={100}/>
         </div>
         <BoxInfo>
           <h3>{escort.username}</h3>

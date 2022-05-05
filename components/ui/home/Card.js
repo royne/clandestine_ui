@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import Image from 'next/image'
 
 export const BoxCard = styled.div`
   width: 49%;
@@ -13,13 +14,9 @@ export const BoxImg = styled.div`
   width: 100%;
   height: 240px;
   cursor: pointer;
-  &>img{
-    min-width: 100%;
-    max-width: 100%;
-    max-height: 240px;
-    min-height: 240px;
-  }
+  position: relative;
 `
+
 
 export const BoxInfo = styled.div`
   position: relative;

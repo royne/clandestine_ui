@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import Image from 'next/image'
 
 export const Container = styled.section`
   width: 100%;
@@ -74,7 +75,7 @@ export const ContainerPhotoProfile = styled.div`
   padding: 3%;
 `
 
-export const ImgProfile = styled.img`
+export const ImgProfile = styled(Image)`
   width: 100px;
   height: 100px;
   border-radius: 50%;
