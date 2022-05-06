@@ -41,10 +41,9 @@ const NavMenu = () => {
           <MenuInBlackUp className="menuBlack">
             <h1><img src="/icons/search.svg" id="icono-menu" width="20"/> Buscar escort</h1>
           </MenuInBlackUp>
+          
           <div>
-
             <FilterSearch />
-
             <div className="icono-menu" onClick={openMenu} style={{position: "absolute", bottom: "3%", right: "5%"}}>
               <img src="/icons/delete.png" id="icono-menu" width="20" style={{filter: "invert(100%)"}}/>
             </div>
