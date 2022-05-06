@@ -6,7 +6,7 @@ import PhotosEdit from '../../components/escort_book/PhotosEdit'
 import Layout from '../../components/layout/Layout'
 
 const EscortBook = () => {
-  const [tab, setTab] = useState(1)
+  const [tab, setTab] = useState(0)
   const { user } = useUser()
 
   return (
