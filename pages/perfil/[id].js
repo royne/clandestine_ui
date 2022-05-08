@@ -24,6 +24,7 @@ const Profile = () => {
   return (
     <Layout>
       {!changeGrid ? <ProfileGridView escort={escort} setChangeGrid={setChangeGrid} /> : <ProfileScrollView escort={escort} setChangeGrid={setChangeGrid} />}
+      <span>Views: {escort.visit_counter}</span><br />
     </Layout>
   )
 }
