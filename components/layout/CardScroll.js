@@ -16,7 +16,7 @@ const CardScroll = ({ escort, photo, setChangeGrid, gridHome=false}) => {
         {gridHome ? <Link href={`/perfil/${escort.id}`}><Image src={photo} layout={"fill"} objectFit={'cover'}/></Link> : <Image src={photo} layout={"fill"} objectFit={'cover'}/>}
       </BoxImageCard>
       <FooterCard>
-        <span>Aca Va algo</span>
+        <span>Views: {escort.visit_counter}</span>
       </FooterCard>
     </BoxCardScroll>
   )

@@ -41,24 +41,7 @@ const FilterSearch = () => {
   return ( 
     <div style={{margin: '10%'}}>
       <form onSubmit={getDataFilters}>
-        <div>
-          <label>Edad</label>
-        </div>
-        <select name="age" id="age" style={{width: "100%", height: "35px", marginBottom: "20px"}}>
-          <option value="1">22-25</option>
-          <option value="2">25-30</option>
-          <option value="3">30-50</option>
-        </select>
-
-        <div>
-          <label>Precio</label>
-        </div>
-        <select name="age" id="age" style={{width: "100%", height: "35px", marginBottom: "20px"}}>
-          <option value="1">22-25</option>
-          <option value="2">25-30</option>
-          <option value="3">30-50</option>
-        </select>
-
+        
         <BoxIputs>
           <label>Categorias</label>
           <Select
@@ -85,6 +68,25 @@ const FilterSearch = () => {
             options={options.activities}
           />
         </BoxIputs>
+
+        <div>
+          <label>Edad</label>
+        </div>
+        <select name="age" id="age" style={{ width: "100%", height: "35px", marginBottom: "20px" }}>
+          <option value="1">22-25</option>
+          <option value="2">25-30</option>
+          <option value="3">30-50</option>
+        </select>
+
+        <div>
+          <label>Precio</label>
+        </div>
+        <select name="age" id="age" style={{ width: "100%", height: "35px", marginBottom: "20px" }}>
+          <option value="1">22-25</option>
+          <option value="2">25-30</option>
+          <option value="3">30-50</option>
+        </select>
+
 
         <div>
           <input type='submit' style={{ width: "100%", height: "35px", marginBottom: "20px", color: "var(--white)", background: "var(--black)" }} value="Filtrar Perfiles" />

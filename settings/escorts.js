@@ -17,3 +17,8 @@ export const sendFormData = async data => {
   })
   return response
 }
+
+export const setCounter = async id => {
+  const url = `${BASE_URL}/escorts/counter?id=${id}`;
+  await fetch(url);
+};

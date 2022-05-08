@@ -13,7 +13,8 @@ const HeaderProfile = ({ escort }) => {
         </div>
         <BoxInfo>
           <h3>{escort.username}</h3>
-          <span>Edad: {escort.age}</span>
+          <span>Edad: {escort.age}</span><br/>
+          <span>Views: {escort.visit_counter}</span>
           <div className='btn_wp'>
             <a href={`https://wa.me/57${escort.phone}/?text=Hola%20${escort.username}%20Tienes%20un%20mensaje%20de%20CLANDESTINO`} target="_blank">
               <img src="/icons/whatsapp.svg" />
