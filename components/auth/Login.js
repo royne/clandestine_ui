@@ -4,9 +4,8 @@ import { useUser } from "../../context/userContext";
 import { login } from "../../settings/auth";
 import { FormInput, ButtonsForm, ButtonCreate, FormSelect } from "../ui/home/FormModal"
 
-const Login = ({ openModal, hideModal}) => {
+const Login = ({ openModal, hideModal, showViewInModal, changeForm}) => {
   const [showModal, setShowModal] = useState(false);
-  const [ showViewInModal, setShowViewInModal] = useState(true)
   const [data, setData] = useState({
     email: "",
     password: ""
@@ -16,7 +15,6 @@ const Login = ({ openModal, hideModal}) => {
   const closeModal = () => {
     setShowModal(false)
     hideModal(false)
-    setShowViewInModal(true)
   }
 
   useEffect(() => {
@@ -44,13 +42,7 @@ const Login = ({ openModal, hideModal}) => {
     closeModal();
   }
 
-  const changeForm = () => {
-    if(showViewInModal){
-      setShowViewInModal(false)
-    } else {
-      setShowViewInModal(true)
-    }
-  }
+  
 
   return (
     <Modal onClose={closeModal} show={showModal} title={"Bienvenido a CLANDESTINO"}>

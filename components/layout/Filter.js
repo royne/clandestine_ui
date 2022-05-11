@@ -6,7 +6,7 @@ import { BoxIputs } from '../ui/escort_book/FormEscort'
 import {buildQuery} from '../../helpers/common'
 
 
-const FilterSearch = () => {
+const FilterSearch = ({openMenu}) => {
   const [data, setData] = useState({})
   const [options, setOptions] = useState({
     categories: [],
@@ -34,6 +34,7 @@ const FilterSearch = () => {
 
   const getDataFilters = e => {
     e.preventDefault()
+    openMenu()
     const query = buildQuery(data)
     return router.push(`/search${query}`) 
   }
@@ -81,7 +82,7 @@ const FilterSearch = () => {
         <div>
           <label>Precio</label>
         </div>
-        <select name="age" id="age" style={{ width: "100%", height: "35px", marginBottom: "20px" }}>
+        <select name="price" id="price" style={{ width: "100%", height: "35px", marginBottom: "20px" }}>
           <option value="1">22-25</option>
           <option value="2">25-30</option>
           <option value="3">30-50</option>
@@ -89,7 +90,7 @@ const FilterSearch = () => {
 
 
         <div>
-          <input type='submit' style={{ width: "100%", height: "35px", marginBottom: "20px", color: "var(--white)", background: "var(--black)" }} value="Filtrar Perfiles" />
+          <input type='submit' style={{ width: "100%", height: "35px", marginBottom: "20px", color: "var(--white)", background: "var(--black)" }} value="Filtrar Perfiles"/>
         </div>
       </form>
     </div>
