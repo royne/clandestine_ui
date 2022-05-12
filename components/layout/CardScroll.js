@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { BoxCardScroll, HeaderCard, BoxImageCard, FooterCard } from '../ui/home/profile'
 
-const CardScroll = ({ escort, photo, setChangeGrid, gridHome=false, openModal}) => {
+const CardScroll = ({ escort, photo, setChangeGrid, gridHome=false, openModal, index}) => {
   return (
     <BoxCardScroll>
       <HeaderCard>
@@ -13,7 +13,7 @@ const CardScroll = ({ escort, photo, setChangeGrid, gridHome=false, openModal}) 
         <img src="/icons/grid.svg" className='img_grid' onClick={() => setChangeGrid(false)}/>
       </HeaderCard>
       <BoxImageCard>
-        {gridHome ? <Link href={`/perfil/${escort.id}`}><Image src={photo} layout={"fill"} objectFit={'cover'}/></Link> : <Image src={photo} layout={"fill"} objectFit={'cover'} onClick={openModal}/>}
+        {gridHome ? <Link href={`/perfil/${escort.id}`}><Image src={photo} layout={"fill"} objectFit={'cover'}/></Link> : <Image src={photo} layout={"fill"} objectFit={'cover'} onClick={openModal} className={index}/>}
       </BoxImageCard>
       <FooterCard>
         <span>Views: {escort.visit_counter}</span>

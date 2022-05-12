@@ -29,7 +29,11 @@ export const ItemCarrousel = styled.div`
 
 export const ItemCarrouselTarjeta = styled.div`
   width: 100%;
-  height: 100%;
+  height: 90%;
+  & > img {
+    width: 100%;
+    height: 100%;
+  }
 `
 
 export const ItemCarrouselArrows = styled.div`
@@ -38,6 +42,8 @@ export const ItemCarrouselArrows = styled.div`
   bottom: 0;
   left: 0;
   right: 0;
+  display: block;
+  z-index: 1000;
   height: 100%;
   width: 100%; 
   display: flex;
@@ -63,11 +69,22 @@ export const ConteCarrouselController = styled.div`
   }
 `
 
+export const ContenLogo = styled.div`
+  background-color: rgba(0,0,0,.5);
+  width: 100%;
+  position: absolute;
+  bottom: 10%;
+  right: 0;
+` 
+
 export const ImgProfile = styled.img`
   display: block;
   width: 60px;
   height: 60px;
+  padding: 10px;
   filter: invert(100%);
+  background-color: rgba(255,255,255,.8);
+  border-radius: 50%;
 `
 
 
