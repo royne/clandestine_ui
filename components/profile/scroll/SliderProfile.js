@@ -1,6 +1,7 @@
 import React from 'react';
 import {Carrousel, ConteCarrousel, ItemCarrousel, ItemCarrouselTarjeta, ItemCarrouselArrows, ConteCarrouselController, ImgProfile, ContenLogo} from '../../ui/escort_book/SliderProfile'
 import Link from 'next/link';
+import Image from 'next/image';
 
 const SliderProfile = ({escort, imageSelect}) => {
 
@@ -11,9 +12,9 @@ const SliderProfile = ({escort, imageSelect}) => {
 				{
 					escort.photos.map((photo, index) => {
 						return (
-							<ItemCarrousel id={`itemCarrousel-${index}`}>
+							<ItemCarrousel id={`itemCarrousel-${index}`} key={index}>
           			<ItemCarrouselTarjeta>
-									<img src={photo} alt="test" />
+									<Image src={photo} alt="test" layout={"fill"} objectFit={'contain'}/>
 								</ItemCarrouselTarjeta>
           			<ItemCarrouselArrows>
           			  <Link href={`#itemCarrousel-${index === 0 ? escort.photos.length - 1 : index-1}`}>
@@ -24,7 +25,7 @@ const SliderProfile = ({escort, imageSelect}) => {
           			  </Link>
           			</ItemCarrouselArrows>
 								<ContenLogo>
-								<img src="/logo.png" id="icono-menu" width="200"/>
+								<Image src="/logo.png" id="icono-menu" width={200} height={80}/>
 								</ContenLogo>
         			</ItemCarrousel>
 						)
@@ -35,8 +36,10 @@ const SliderProfile = ({escort, imageSelect}) => {
 				{
 					escort.photos.map((photo, index) => {
 						return (
-							<Link href={`#itemCarrousel-${index}`} id={`controlImage${index}`}>
-								<img width="50" src={photo} />	
+							<Link href={`#itemCarrousel-${index}`} id={`controlImage${index}`} key={index}>
+								<div style={{position: "relative", width:40, height:60}} >
+									<Image src={photo} layout={"fill"} objectFit={'contain'}  />	
+								</div>
 							</Link>
 						)
 					})

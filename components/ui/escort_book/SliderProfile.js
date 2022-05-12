@@ -3,6 +3,7 @@ import styled from '@emotion/styled'
 
 export const Carrousel = styled.div`
   width: 100%;
+  max-height: 100vh;
 `
 
 export const ConteCarrousel = styled.div`
@@ -30,6 +31,7 @@ export const ItemCarrousel = styled.div`
 export const ItemCarrouselTarjeta = styled.div`
   width: 100%;
   height: 90%;
+  position: relative;
   & > img {
     width: 100%;
     height: 100%;
@@ -49,7 +51,7 @@ export const ItemCarrouselArrows = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px; 
+  padding: 5px; 
   & > i:hover {
     cursor: pointer;
   }
@@ -79,9 +81,9 @@ export const ContenLogo = styled.div`
 
 export const ImgProfile = styled.img`
   display: block;
-  width: 60px;
-  height: 60px;
-  padding: 10px;
+  width: 30px;
+  height: 30px;
+  padding: 5px;
   filter: invert(100%);
   background-color: rgba(255,255,255,.8);
   border-radius: 50%;
