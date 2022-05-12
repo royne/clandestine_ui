@@ -1,14 +1,15 @@
 import styled from '@emotion/styled'
 
 export const StyledModal = styled.div`
-  background: rgba(0,0,0,.9) url("/Fondo_Modal.jpg");
+  background: ${props => props.optionDesing ? 'rgba(0,0,0,.98)' : 'rgba(0,0,0,.9) url("/Fondo_Modal.jpg")'};;
   background-position: center;
   background-blend-mode: darken;
-  width: 90%;
-  max-height: 600px;
+  width: ${props => props.optionDesing ? '100%' : '90%'};
+  max-height: ${props => props.optionDesing ? '100%' : '600px'};
+  height: ${props => props.optionDesing ? '100%' : 'auto'};
   border-radius: 5px;
   padding: 15px;
-  border: 1px solid var(--white);
+  border:  ${props => props.optionDesing ? 'none' : '1px solid var(--white)'};
   @media (min-width: 576px) {
     width: 400px;
   }

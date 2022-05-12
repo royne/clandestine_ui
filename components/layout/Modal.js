@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react'
 import ReactDOM from "react-dom";
 import { StyledModalOverlay, StyledModal, StyledModalHeader, StyledModalBody, StyledModalTitle } from '../ui/home/Modal'
 
-const Modal = ({ show, onClose, children, title }) => {
+const Modal = ({ show, onClose, children, title, desingModal=false }) => {
   const [isBrowser, setIsBrowser] = useState(false);
-
+  
   useEffect(() => {
     setIsBrowser(true);
   }, []);
@@ -22,7 +22,7 @@ const Modal = ({ show, onClose, children, title }) => {
   
   const modalContent = show ? (
     <StyledModalOverlay className="modalTarget" onClick={closeModal}>
-      <StyledModal>
+      <StyledModal optionDesing={desingModal}>
         <StyledModalHeader>
           <a href="#" onClick={handleCloseClick}>
             x

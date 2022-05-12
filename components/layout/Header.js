@@ -9,9 +9,15 @@ import Image from 'next/image';
 const Header = () => {
   const [showLogin, setShowLogin] = useState(false)
   const [showMenu, setShowMenu] = useState(false)
+  const [ showViewInModal, setShowViewInModal] = useState(true)
   const { user } = useUser()
-  const showModal = () => {
+  const showModal = (e) => {
     setShowMenu(false)
+    if(e.target.classList.contains("registerButton")){
+      setShowViewInModal(false)
+    } else {
+      setShowViewInModal(true)
+    }
     setTimeout(() => {
       setShowLogin(true)
     }, 500);
@@ -29,6 +35,14 @@ const Header = () => {
   const closeMenu = (e) => {
     if(e.target.classList.contains("menuBlack")){
       setShowMenu(false)
+    }
+  }
+
+  const changeForm = () => {
+    if(showViewInModal){
+      setShowViewInModal(false)
+    } else {
+      setShowViewInModal(true)
     }
   }
 
@@ -51,7 +65,7 @@ const Header = () => {
                 </div>
                 <ul>
                   <li onClick={showModal}> Iniciar Sesion </li>
-                  <li onClick={showModal}> Registrate </li>
+                  <li onClick={showModal} className="registerButton"> Registrate </li>
                 </ul> 
               </div>
               <MenuInBlack className="menuBlack">
@@ -68,7 +82,7 @@ const Header = () => {
           <a className="logo"><img src={"/logo.png"} /></a>
         </Link>
       </HeaderBox>
-      <Login openModal={showLogin} hideModal={hideModal}/>
+      <Login openModal={showLogin} hideModal={hideModal} showViewInModal={showViewInModal} changeForm={changeForm}/>
     </>
   );
 }
