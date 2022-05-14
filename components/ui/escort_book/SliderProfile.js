@@ -8,7 +8,7 @@ export const Carrousel = styled.div`
 
 export const ConteCarrousel = styled.div`
   width: 100%;
-  height: 700px;
+  height: 650px;
   overflow: hidden;
 `
 
@@ -61,9 +61,17 @@ export const ItemCarrouselArrows = styled.div`
 `
 
 export const ConteCarrouselController = styled.div`
-  width: 100%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: ${(props) => parseInt(props.positionImages) <= 3 ? "center" : "none"} ;
+  gap: 20px;
+  max-width: 450px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  box-shadow: 0 3px 10px 0 rgba(#000, 0.1);
+  -webkit-overflow-scrolling: touch;
+  scroll-padding: 1rem;
+  padding: 1rem;
+  border-radius: 5px;
   & > a {
     text-decoration: none;
     font-size: 2em;
@@ -71,12 +79,27 @@ export const ConteCarrouselController = styled.div`
   }
 `
 
+export const Section_item = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 80px;
+  width: 30px;
+  height: 100px;
+  scroll-snap-align: start;
+  background-color: #ccc;
+  font-size: 1.5rem;
+  background-color: white;
+  border: 1px solid white;
+`
+
+
 export const ContenLogo = styled.div`
-  background-color: rgba(0,0,0,.5);
-  width: 100%;
+  /* background-color: rgba(0,0,0,.5); */
   position: absolute;
   bottom: 10%;
-  right: 0;
+  right: 10px;
+  /* opacity: .7; */
 ` 
 
 export const ImgProfile = styled.img`
