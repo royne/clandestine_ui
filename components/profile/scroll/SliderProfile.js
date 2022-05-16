@@ -1,16 +1,20 @@
 import React from 'react';
-import {Carrousel, ConteCarrousel, ItemCarrousel, ItemCarrouselTarjeta, ItemCarrouselArrows, ConteCarrouselController, ImgProfile, ContenLogo} from '../../ui/escort_book/SliderProfile'
+import {Carrousel, ConteCarrousel, ItemCarrousel, ItemCarrouselTarjeta, ItemCarrouselArrows, ConteCarrouselController, ImgProfile, ContenLogo, Section_item} from '../../ui/escort_book/SliderProfile'
 import Link from 'next/link';
 import Image from 'next/image';
 
 const SliderProfile = ({escort, imageSelect}) => {
+
+	const imgSelected = [escort.photos[parseInt(imageSelect)]]
+
+	const orderIn = imgSelected.concat(escort.photos.filter(photo => photo !== imgSelected[0]))
 
 	
 	return ( 
     <Carrousel>
       <ConteCarrousel>
 				{
-					escort.photos.map((photo, index) => {
+					orderIn.map((photo, index) => {
 						return (
 							<ItemCarrousel id={`itemCarrousel-${index}`} key={index}>
           			<ItemCarrouselTarjeta>
@@ -25,22 +29,24 @@ const SliderProfile = ({escort, imageSelect}) => {
           			  </Link>
           			</ItemCarrouselArrows>
 								<ContenLogo>
-								<Image src="/logo.png" id="icono-menu" width={200} height={80}/>
+									<Image src="/logo.png" id="icono-menu" width={200} height={80}/>
 								</ContenLogo>
         			</ItemCarrousel>
 						)
 					})
 				}
       </ConteCarrousel>
-      <ConteCarrouselController>
+      <ConteCarrouselController positionImages={escort.photos.length}>
 				{
-					escort.photos.map((photo, index) => {
-						return (
+					orderIn.map((photo, index) => {
+						return(
+						<Section_item key={`imageWithIndex_${index}`}>
 							<Link href={`#itemCarrousel-${index}`} id={`controlImage${index}`} key={index}>
-								<div style={{position: "relative", width:40, height:60}} >
+								<div style={{position: "relative", width:70, height:90}} >
 									<Image src={photo} layout={"fill"} objectFit={'contain'}  />	
 								</div>
 							</Link>
+						</Section_item>
 						)
 					})
 				}
