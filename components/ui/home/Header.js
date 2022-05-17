@@ -19,6 +19,7 @@ export const HeaderNav = styled.header`
 `;
 
 export const HeaderBox = styled.div`
+  position: relative;
   width: 100%;
   height: 100px;
   display: flex;
@@ -33,13 +34,13 @@ export const HeaderBox = styled.div`
   }
   .logo{
     position: absolute;
-    top: 0;
+    top: 39%;
     right: 2%;
     transform: translateY(-35%);
     &>img{
       max-width: 100%;
       min-width: 100%;
-      height: 150px;
+      height: 90px;
     }
   }
 `;
