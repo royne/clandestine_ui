@@ -15,6 +15,7 @@ export const BoxImg = styled.div`
   height: 240px;
   cursor: pointer;
   position: relative;
+  clip-path: circle(90% at 99% 30%);
 `
 
 
@@ -35,6 +36,7 @@ export const BoxInfo = styled.div`
   .detail_info{
     font-size: 13px;
   }
+  
 `
 export const ImgType = styled.img`
   max-width: 50px;
