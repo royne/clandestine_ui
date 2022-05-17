@@ -16,7 +16,7 @@ const CardScroll = ({ escort, photo, setChangeGrid, gridHome=false, openModal, i
         {gridHome ? <Link href={`/perfil/${escort.id}`}><Image src={photo} layout={"fill"} objectFit={'cover'}/></Link> : <Image src={photo} layout={"fill"} objectFit={'cover'} onClick={openModal} className={index}/>}
       </BoxImageCard>
       <FooterCard>
-        <span>Views: {escort.visit_counter}</span>
+        {/* <span>Views: {escort.visit_counter}</span> */}
       </FooterCard>
     </BoxCardScroll>
   )
