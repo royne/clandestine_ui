@@ -46,13 +46,27 @@ const Header = () => {
     }
   }
 
+  const AvatarMenu = () => {
+    if(user.avatar){
+      return (
+        <Link href={`${user.role === 'escort' ? '/escort_book' : '/user_profile'}`}>
+          <Image src={user.avatar} width={35} height={35} style={{ borderRadius: "50%", padding: 0 }} />
+        </Link>
+      )
+    }else{
+      return (
+        <Link href={`${user.role === 'escort' ? '/escort_book' : '/user_profile'}`}>
+          <Image src={'/usuario.png'} width={35} height={35} style={{ borderRadius: "50%", padding: 0 }} />
+        </Link>
+      )
+    }
+  }
+
   return (
     <>
       <HeaderNav>
-        {user && user.avatar ? 
-          <Link href={'/escort_book'}>
-            <Image src={user.avatar} width={35} height={35} style={{borderRadius:"50%",padding:0}}/> 
-          </Link>
+        {user ? 
+          <AvatarMenu />
         : 
           <MenuNav>
             <div className="icono-menu" onClick={openMenu}>

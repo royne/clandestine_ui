@@ -3,7 +3,7 @@ import Galery from '../components/Galery'
 
 export default function Home() {
   return (
-    <Layout showBanner={true}>
+    <Layout showBanner={false}>
       <Galery />
     </Layout>
   )

@@ -1,5 +1,9 @@
 import {useState} from 'react'
-import { FormInput, ButtonsForm, ButtonCreate, FormSelect } from "../ui/home/FormModal"
+import { useRouter } from 'next/router'
+import { login } from '../../settings/auth'
+import { BASE_URL } from '../../settings/base'
+import { useUser } from '../../context/userContext'
+import { FormInput, ButtonCreate } from "../ui/home/FormModal"
 
 const FormSingUp = ({ changeForm}) => {
   const [data, setData] = useState({
@@ -7,9 +11,36 @@ const FormSingUp = ({ changeForm}) => {
     username: "",
     password: ""
   });
+  const { setChargeUser, setUser } = useUser();
+  const router = useRouter();
+
 
   const submitForm = async e => {
     e.preventDefault()
+    const url = `${BASE_URL}/users`
+    const request = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ user: data })
+    })
+    if (request.ok) {
+      const dataLogin = await login({
+        email: data.email,
+        password: data.password,
+      });
+      if (dataLogin) {
+        setUser(dataLogin);
+        setChargeUser(false);
+      }
+      return router.push("/")
+    } else {
+      alert("error inesperado")
+      setData({
+        username: "",
+        email: "",
+        password: ""
+      });
+    }
   }
 
   const handleChange = e => {
@@ -39,7 +70,7 @@ const FormSingUp = ({ changeForm}) => {
         <FormInput type="password" name="password" onChange={handleChange} />
       </div>
       <ButtonCreate>
-        <input type="button" value="Crear Cuenta" />
+        <input type="submit" value="Crear Cuenta" />
       </ButtonCreate>
       <ButtonCreate>
         <input type="button" value="Ya tengo Cuenta" onClick={changeForm} />
