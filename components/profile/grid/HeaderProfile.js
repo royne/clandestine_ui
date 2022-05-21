@@ -1,14 +1,26 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { ContainerPhotoProfile, ImgProfile, BoxInfo } from '../../ui/escort_book/PhotosEdit'
+import ModalProfileInfo from './ModalProfileInfo.js'
 
 const HeaderProfile = ({ escort }) => {
 
+  const [openModal, setOpenModal] = useState(false)
+
+  const showModal = () => {
+    if(openModal){
+      setOpenModal(false)
+    }else{
+      setOpenModal(true)
+    }
+  }
+
   if (Object.keys(escort).length === 0) return null
+
 
   return (
     <>
       <ContainerPhotoProfile>
-        <div style={{ position: "relative" }}>
+        <div style={{ position: "relative" }} onClick={showModal}>
           <ImgProfile src={`${escort.avatar ? escort.avatar : "/usuario.png"}`} width={100} height={100}/>
         </div>
         <BoxInfo>
@@ -26,6 +38,7 @@ const HeaderProfile = ({ escort }) => {
       <div>
         <span>{escort.description}</span>
       </div>
+      <ModalProfileInfo openModal={openModal} showModal={showModal} escort={escort}/>
     </>
   )
 }

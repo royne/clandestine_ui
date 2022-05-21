@@ -34,11 +34,11 @@ export const HeaderBox = styled.div`
   .logo{
     position: absolute;
     top: 0;
-    right: 2%;
+    right: -10%;
     transform: translateY(-35%);
     &>img{
-      max-width: 100%;
-      min-width: 100%;
+      max-width: 85%;
+      min-width: 85%;
       height: 150px;
     }
   }

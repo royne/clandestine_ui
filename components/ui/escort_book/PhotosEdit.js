@@ -79,6 +79,8 @@ export const ImgProfile = styled(Image)`
   width: 100px;
   height: 100px;
   border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
   
 `
 export const BoxInfo = styled.div`
