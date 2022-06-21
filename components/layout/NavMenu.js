@@ -51,7 +51,7 @@ const NavMenu = () => {
         </MenuNewUp>
       </MenuNav>
 
-      <Link href="/"><img src="/icons/noti.svg" onClick={logOut} /></Link>
+      <Link href="/"><img src="/icons/profile2.svg" onClick={logOut} style={{ filter: "invert(100%)" }} /></Link>
     </ContainerNavMenu>
   )
 }

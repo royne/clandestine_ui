@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { ContainerPhotoProfile, ImgProfile, BoxInfo } from '../../ui/escort_book/PhotosEdit'
+import { ContainerPhotoProfile, ImgProfile, BoxInfo, IcoInfo } from '../../ui/escort_book/PhotosEdit'
 import ModalProfileInfo from './ModalProfileInfo.js'
 
 const HeaderProfile = ({ escort }) => {
@@ -20,8 +20,9 @@ const HeaderProfile = ({ escort }) => {
   return (
     <>
       <ContainerPhotoProfile>
-        <div style={{ position: "relative" }} onClick={showModal}>
+        <div style={{ position: "relative" }}>
           <ImgProfile src={`${escort.avatar ? escort.avatar : "/usuario.png"}`} width={100} height={100}/>
+          <IcoInfo src="/icons/info.png" onClick={showModal}/>
         </div>
         <BoxInfo>
           <h3>{escort.username}</h3>

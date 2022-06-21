@@ -149,3 +149,12 @@ export const BtnProfilePhoto = styled.form`
     filter: invert(0.7);
   }
 `
+export const IcoInfo = styled.img`
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  filter: invert(0.2);
+  cursor: pointer;
+`

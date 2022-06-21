@@ -4,6 +4,9 @@ import {ConatainerImg, ImgContainer, ConatainerInfo, BoxInfo} from "../../ui/esc
 
 
 const ModalProfileInfo = ({openModal, showModal, escort}) => {
+  console.log(escort);
+  const addDash = (arr, i) => arr.length === i + 1 ? false : true
+
   return ( 
     <Modal show={openModal} desingModal={true} onClose={showModal}>
       <div>
@@ -12,30 +15,22 @@ const ModalProfileInfo = ({openModal, showModal, escort}) => {
         </ConatainerImg>
         <ConatainerInfo>
           <h1>{escort.username}</h1>
-          <p>
-            Hola amor, espero te encuentres bien. Me llamo Perla y soy una dulce prepago de 50 años que necesita tu vida morbosa, mi rey. Sobresalgo por ser una preciosa dama que trabaja como independiente y que tiene el privilegio de tener una silueta maravillosa.
-          </p>
+          <p>{escort.description}</p>
           <h2>Tarifas</h2>
             <table style={{color: "var(--purple3)", width: "100%"}}>
               <tr>
                 <td>1 hora</td>
-                <td>$130.000</td>
-              </tr>
-              <tr>
-                <td>2 horas</td>
-                <td>$200.000</td>
-              </tr>
-              <tr>
-                <td>Amanecida</td>
-                <td>$730.000</td>
+                <td>${escort.price}</td>
               </tr>
             </table>
           <h2>Horarios</h2>
           <p>Lunes a Domingo	24 horass</p>
           <h2>Mis servicios</h2>
-          <p>Actriz Porno - Besos boca - Fantasias y disfraces - Masajes eroticos - Oral natural</p>
+          <p>{escort.activities.map((elm, i) => <>{elm.name}{addDash(escort.activities, i) ? ' - ' : ''}</>)}</p>
           <h2>Lugar del encuentro</h2>
-          <p>A domicilio - Cena romantica - En un hotel/motel - Eventos y fiestas - Viajes</p>
+          <p>{escort.locations.map((elm, i) => <>{elm.name}{addDash(escort.locations, i) ? ' - ' : ''}</>)}</p>
+          <h2>Categorias</h2>
+          <p>{escort.categories.map((elm, i) => <>{elm.name}{addDash(escort.categories, i) ? ' - ' : ''}</>)}</p>
           <h2>Contactame</h2>
           <BoxInfo>
             <div className='btn_wp'>
