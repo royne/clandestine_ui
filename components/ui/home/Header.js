@@ -36,11 +36,19 @@ export const HeaderBox = styled.div`
     top: 0;
     right: 2%;
     transform: translateY(-35%);
-    &>img{
-      max-width: 100%;
-      min-width: 100%;
-      height: 150px;
-    }
+    /* &>img{
+      max-width: 80%;
+      min-width: 80%;
+      height: 120px;
+    } */
+  }
+  & img {
+    display: block;
+    max-width: 80%;
+    height: 150px;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
   }
 `;
 

@@ -92,8 +92,8 @@ const Header = () => {
       </HeaderNav>
       <HeaderBox>
         <HeaderNavBottom />
-        <Link href={"/"} >
-          <a className="logo"><img src={"/logo.png"} /></a>
+        <Link href={"/"}  className="logo">
+          <img src={"/logo.png"} alt="logo-clandestino"/>
         </Link>
       </HeaderBox>
       <Login openModal={showLogin} hideModal={hideModal} showViewInModal={showViewInModal} changeForm={changeForm}/>
